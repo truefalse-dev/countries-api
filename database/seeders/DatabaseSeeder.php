@@ -6,7 +6,6 @@ use Countries;
 use App\Models\Country;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
@@ -19,27 +18,20 @@ class DatabaseSeeder extends Seeder
     {
         $countries = collect(Countries::getList('name'))
             ->values()
-            ->map( function($country) { 
-
-                $country['capital'] = $country['capital'] ?? 'N/A';
-                $country['flag'] = $country['flag'] ?? null;
-                $country['alias'] = Str::slug($country['name']);
-                $country['population'] = rand(10000, 1000000);
-                $country['area'] = rand(1000, 3000);
-                $country['city'] = Str::slug($country['capital']);
-                $country['iso'] = $country['iso_3166_3'];
-
-                return collect($country)->only([
-                    'alias', 
-                    'name', 
-                    'capital',
-                    'city',
-                    'flag',
-                    'area',
-                    'population',
-                    'iso',
-                ])->all();
-            });
+            ->map( fn ($country) =>
+                [
+                    'name'      => $country['name'],
+                    'iso'       => $country['iso_3166_3'],
+                    'capital'   => $country['capital'] ?? 'N/A',
+                    'flag'      => $country['flag'] ?? null,
+                    'alias'     => Str::slug($country['name']),
+                    'population' => rand(10000, 1000000),
+                    'area'      => rand(1000, 3000),
+                    'city'      => isset($country['capital']) 
+                        ? Str::slug($country['capital']) 
+                        : null,
+                ]
+            );
 
         Country::insert($countries->toArray());
     }

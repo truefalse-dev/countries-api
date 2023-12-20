@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('alias')->unique();
             $table->string('name')->nullable();
-            $table->string('city');
+            $table->string('city')->nullable();
             $table->string('capital')->nullable();
             $table->float('population')->nullable();
             $table->float('area')->nullable();
