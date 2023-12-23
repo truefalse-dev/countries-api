@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
                 'area'          => '123456',
                 'languages'     => 'українська',
                 'flags'         => 'ua.png',
+                'sort_order'    => 100,
             ],
             [
                 'name'          => '',
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
                 'area'          => '',
                 'languages'     => '',
                 'flags'         => '',
+                'sort_order'    => 100,
             ]
         ];
         

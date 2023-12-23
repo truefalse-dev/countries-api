@@ -5,21 +5,32 @@ namespace App\Http\Controllers;
 use App\Http\Resources\CountryResource;
 use App\Models\Country;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class CountriesController extends Controller
 {
     public function getCountriesList(Request $request)
     {
-        return CountryResource::collection(Country::all());
+        return CountryResource::collection(Country::orderBy('sort_order')->get());
     }
 
     public function getCountry(Request $request, string $county)
     {
-        return CountryResource::make(Country::where('alias', $county)->first());
+        $country = Country::where('alias_name', $county)->first();
+
+        if(empty($country))
+            throw ValidationException::withMessages(['Країну не знайдено']);
+
+        return CountryResource::make($country);
     }
 
     public function getCity(Request $request, string $city)
     {
-        return CountryResource::make(Country::where('city', $city)->first());
+        $country = Country::where('city', $city)->first();
+
+        if(empty($country))
+            throw ValidationException::withMessages(['Країну не знайдено']);
+
+        return CountryResource::make($country);
     }
 }

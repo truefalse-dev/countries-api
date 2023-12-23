@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('languages')->nullable();
             $table->string('continent')->nullable();
             $table->string('flags')->nullable();
+            $table->integer('sort_order')->default(0);
         });
     }
 
