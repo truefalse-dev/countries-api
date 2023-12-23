@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
                 'flags'         => 'ua.png',
                 'sort_order'    => 100,
             ],
+            /*
             [
                 'name'          => '',
                 'alias_name'    => '',
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
                 'flags'         => '',
                 'sort_order'    => 100,
             ]
+            */
         ];
         
         Country::insert($arCountries);
