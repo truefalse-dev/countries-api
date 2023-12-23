@@ -15,13 +15,14 @@ class CountryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->resource->id,
-            'iso3' => $this->resource->iso,
-            'name' => $this->resource->name,
-            'capital' => $this->resource->capital,
+            'id'        => $this->resource->id,
+            'continent' => $this->resource->continent,
+            'name'      => $this->resource->name,
+            'capital'   => $this->resource->capital,
             'population' => $this->resource->population,
-            'area' => $this->resource->area,
-            'flag' => $this->resource->flag,
+            'area'      => $this->resource->area,
+            'flags'     => $this->resource->flags,
+            'languages' => $this->resource->languages,
         ];
     }
 }

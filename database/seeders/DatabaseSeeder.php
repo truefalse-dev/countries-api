@@ -16,23 +16,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $countries = collect(Countries::getList('name'))
-            ->values()
-            ->map( fn ($country) =>
-                [
-                    'name'      => $country['name'],
-                    'iso'       => $country['iso_3166_3'],
-                    'capital'   => $country['capital'] ?? 'N/A',
-                    'flag'      => $country['flag'] ?? null,
-                    'alias'     => Str::slug($country['name']),
-                    'population' => rand(10000, 1000000),
-                    'area'      => rand(1000, 3000),
-                    'city'      => isset($country['capital']) 
-                        ? Str::slug($country['capital']) 
-                        : null,
-                ]
-            );
-
-        Country::insert($countries->toArray());
+        $arCountries = [
+            [
+                'name'          => 'Україна',
+                'alias_name'    => 'ukraine',
+                'capital'       => 'Київ',
+                'alias_capital' => 'kyiv',
+                'continent'     => 'Europe',
+                'population'    => '37000000',
+                'area'          => '123456',
+                'languages'     => 'українська',
+                'flags'         => 'ua.png',
+            ],
+            [
+                'name'          => '',
+                'alias_name'    => '',
+                'capital'       => '',
+                'alias_capital' => '',
+                'continent'     => '',
+                'population'    => '',
+                'area'          => '',
+                'languages'     => '',
+                'flags'         => '',
+            ]
+        ];
+        
+        Country::insert($arCountries);
     }
 }
