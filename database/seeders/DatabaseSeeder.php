@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'          => 'Syria',
-                'alias_name'    => 'Syria ',
+                'alias_name'    => 'syria',
                 'capital'       => 'Damascus',
-                'alias_capital' => 'Damascus',
+                'alias_capital' => 'damascus',
                 'continent'     => 'Asia',
                 'population'    => '17500657',
                 'area'          => '185180',
