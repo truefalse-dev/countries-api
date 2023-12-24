@@ -1,4 +1,4 @@
-const endpoint = `http://labapi.test/mycountries/v1.1/`;
+const endpoint = `http://135.181.96.169:9001/mycountries/v1.1/`;
 // Отримати відповідь від сервера
 const fetchData = async () => {
     const response = await fetch(`${endpoint}getcountrieslist`);
