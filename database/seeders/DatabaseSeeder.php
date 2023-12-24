@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'          => 'Albania',
-                'alias_name'    => 'albania ',
+                'alias_name'    => 'albania',
                 'capital'       => 'Tirana',
                 'alias_capital' => 'tirana',
                 'continent'     => 'Europe',
@@ -139,7 +139,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'          => 'Sweden',
-                'alias_name'    => 'sweden ',
+                'alias_name'    => 'sweden',
                 'capital'       => 'Stockholm',
                 'alias_capital' => 'stockholm',
                 'continent'     => 'Europe',
@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'name'          => 'Zimbabwe',
-                'alias_name'    => 'zimbabwe ',
+                'alias_name'    => 'zimbabwe',
                 'capital'       => 'Harare',
                 'alias_capital' => 'harare',
                 'continent'     => 'Africa',

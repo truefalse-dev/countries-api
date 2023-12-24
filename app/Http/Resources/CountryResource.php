@@ -22,7 +22,7 @@ class CountryResource extends JsonResource
             'capital'   => $this->resource->capital,
             'population' => $this->resource->population,
             'area'      => $this->resource->area,
-            'flags'     => $this->resource->flags,
+            'flags'     => url('storage/flags/' . $this->resource->flags),
             'languages' => $this->resource->languages,
         ];
     }
