@@ -16,6 +16,7 @@ class CountryResource extends JsonResource
     {
         return [
             'id'        => $this->resource->id,
+            'alias'     => $this->resource->alias_name,
             'continent' => $this->resource->continent,
             'name'      => $this->resource->name,
             'capital'   => $this->resource->capital,
