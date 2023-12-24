@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('alias_capital')->unique();
             $table->string('capital')->nullable();
             $table->integer('population')->nullable();
-            $table->float('area')->nullable();
+            $table->integer('area')->nullable();
             $table->string('languages')->nullable();
             $table->string('continent')->nullable();
             $table->string('flags')->nullable();
