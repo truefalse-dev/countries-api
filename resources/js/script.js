@@ -23,9 +23,7 @@ function displayCountryInfo() {
     fetch(`${endpoint}getcountry/${selectedCountry}`)
         .then(response => response.json())
         .then(countryDetails => {
-
-            console.log(countryDetails.data.continent);
-
+            
             const continent = countryDetails.data.continent || 'N/A';
 
             const countryInfoDiv = document.getElementById('countryInfo');

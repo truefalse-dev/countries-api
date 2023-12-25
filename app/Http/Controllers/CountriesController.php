@@ -14,23 +14,23 @@ class CountriesController extends Controller
         return CountryResource::collection(Country::orderBy('sort_order')->get());
     }
 
-    public function getCountry(Request $request, string $county)
+    public function getCountry(Request $request, string $country)
     {
-        $country = Country::where('alias_name', $county)->first();
+        $countryData = Country::where('alias_name', $country)->first();
 
-        if(empty($country))
+        if(empty($countryData))
             throw ValidationException::withMessages(['Країну не знайдено']);
 
-        return CountryResource::make($country);
+        return CountryResource::make($countryData);
     }
 
     public function getCity(Request $request, string $city)
     {
-        $country = Country::where('city', $city)->first();
+        $countryData = Country::where('alias_capital', $city)->first();
 
-        if(empty($country))
+        if(empty($countryData))
             throw ValidationException::withMessages(['Країну не знайдено']);
 
-        return CountryResource::make($country);
+        return CountryResource::make($countryData);
     }
 }
