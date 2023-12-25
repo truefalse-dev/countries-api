@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         $arCountries = [
             [
-                'name'          => 'Україна',
+                'name'          => 'Ukraine',
                 'alias_name'    => 'ukraine',
-                'capital'       => 'Київ',
+                'capital'       => 'Kyiv',
                 'alias_capital' => 'kyiv',
                 'continent'     => 'Europe',
-                'population'    => '37000000',
-                'area'          => '123456',
-                'languages'     => 'українська',
+                'population'    => '44134693',
+                'area'          => '603500',
+                'languages'     => 'Ukrainian',
                 'flags'         => 'ua.png',
                 'sort_order'    => 100,
             ],
