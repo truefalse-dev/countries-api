@@ -11,7 +11,9 @@ class CountriesController extends Controller
 {
     public function getCountriesList(Request $request)
     {
-        return CountryResource::collection(Country::orderBy('sort_order')->get());
+        $countries = Country::orderBy('sort_order')->get();
+        
+        return CountryResource::collection($countries);
     }
 
     public function getCountry(Request $request, string $county)
