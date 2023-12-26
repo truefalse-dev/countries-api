@@ -14,6 +14,7 @@ class CountryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        // формуємо поля обʼєкту країни для виводу у відповідь
         return [
             'id'        => $this->resource->id,
             'alias'     => $this->resource->alias_name,
