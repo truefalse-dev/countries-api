@@ -22,10 +22,10 @@ class CountriesController extends Controller
     // метод повернення країни по аліасу $country
     public function getCountry(Request $request, string $country)
     {
-        // отримуємо країну з бази данних по ключу `alias_name`, беремо единий кортеж first()
+        // отримуємо країну з бази данних по ключу `alias_name`, беремо единий кортеж
         $countryData = Country::where('alias_name', $country)->first();
 
-        // перевіряємо чи є такий кортеж, якщо ні виводимо виключення - Країну не знайдено
+        // перевіряємо чи є такий кортеж, якщо ні виводимо виключення - `Країну не знайдено`
         if(empty($countryData))
             throw ValidationException::withMessages(['Країну не знайдено']);
 
@@ -36,10 +36,10 @@ class CountriesController extends Controller
     // метод повернення країни по аліасу міста $city
     public function getCity(Request $request, string $city)
     {
-        // отримуємо країну з бази данних по ключу `alias_capital`, беремо единий кортеж first()
+        // отримуємо країну з бази данних по ключу `alias_capital`, беремо единий кортеж
         $countryData = Country::where('alias_capital', $city)->first();
 
-        // перевіряємо чи є такий кортеж, якщо ні виводимо виключення - Країну не знайдено
+        // перевіряємо чи є такий кортеж, якщо ні виводимо виключення - `Країну не знайдено`
         if(empty($countryData))
             throw ValidationException::withMessages(['Країну не знайдено']);
 
